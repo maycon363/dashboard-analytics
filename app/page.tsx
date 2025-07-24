@@ -6,7 +6,9 @@ import Sidebar from "@/components/Sidebar" // ← agora é mobile-only com porta
 import CardStat from "@/components/CardStat"
 import { Users, DollarSign, Eye, Settings } from "lucide-react"
 import Chart from "@/components/Chart"
-import TableRecent from "@/components/TableRecent"
+import TableRecent from "@/components/TableRecent";
+import Link from "next/link"
+
 
 export default function Home() {
   const [isSidebarOpen, setSidebarOpen] = useState(false)
@@ -17,16 +19,16 @@ export default function Home() {
 
   return (
     <div className="relative flex min-h-screen w-full overflow-hidden">
-      
+
       {/* ✅ Sidebar visível sempre no desktop */}
       <aside className="hidden md:block w-60 h-screen bg-muted p-4 border-r">
         <nav className="space-y-4">
-          <a href="/" className="flex items-center gap-2 hover:underline">
+          <Link href="/" className="flex items-center gap-2 hover:underline">
             <Users size={18} /> Dashboard
-          </a>
-          <a href="/settings" className="flex items-center gap-2 hover:underline">
+          </Link>
+          <Link href="/settings" className="flex items-center gap-2 hover:underline">
             <Settings size={18} /> Configurações
-          </a>
+          </Link>
         </nav>
       </aside>
 
