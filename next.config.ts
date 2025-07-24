@@ -1,13 +1,13 @@
+/** @type {import('next').NextConfig} */
 const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
   output: 'export',
   basePath: isProd ? '/dashboard-analytics' : '',
   assetPrefix: isProd ? '/dashboard-analytics/' : '',
-  publicRuntimeConfig: {
-    basePath: isProd ? '/dashboard-analytics' : '',
+  images: {
+    unoptimized: true,
   },
 };
 
 export default nextConfig;
-
