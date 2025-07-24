@@ -5,6 +5,7 @@ const isProd = process.env.NODE_ENV === 'production'
 const nextConfig: NextConfig = {
   basePath: isProd ? '/dashboard-analytics' : '',
   assetPrefix: isProd ? '/dashboard-analytics/' : '',
+  output: 'export',
 }
 
 export default nextConfig
