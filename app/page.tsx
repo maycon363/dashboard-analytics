@@ -8,15 +8,11 @@ import { Users, DollarSign, Eye, Settings } from "lucide-react"
 import Chart from "@/components/Chart"
 import TableRecent from "@/components/TableRecent";
 import Link from "next/link"
-import getConfig from 'next/config'
-
-
 
 
 export default function Home() {
   const [isSidebarOpen, setSidebarOpen] = useState(false)
-  const { publicRuntimeConfig } = getConfig()
-  const basePath = publicRuntimeConfig.basePath || ''
+  const basePath = "/dashboard-analytics"
 
   function toggleSidebar() {
     setSidebarOpen(!isSidebarOpen)
