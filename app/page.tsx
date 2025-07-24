@@ -8,17 +8,19 @@ import { Users, DollarSign, Eye, Settings } from "lucide-react"
 import Chart from "@/components/Chart"
 import TableRecent from "@/components/TableRecent";
 import Link from "next/link"
+import getConfig from 'next/config'
+
+
 
 
 export default function Home() {
   const [isSidebarOpen, setSidebarOpen] = useState(false)
-  const basePath = process.env.NODE_ENV === 'production' ? '/dashboard-analytics' : ''
+  const { publicRuntimeConfig } = getConfig()
+  const basePath = publicRuntimeConfig.basePath || ''
 
   function toggleSidebar() {
     setSidebarOpen(!isSidebarOpen)
   }
-
-  
 
   return (
     <div className="relative flex min-h-screen w-full overflow-hidden">

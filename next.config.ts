@@ -1,11 +1,13 @@
-import { NextConfig } from 'next'
-
-const isProd = process.env.NODE_ENV === 'production'
+const isProd = process.env.NODE_ENV === 'production';
 
 const nextConfig = {
+  output: 'export',
   basePath: isProd ? '/dashboard-analytics' : '',
   assetPrefix: isProd ? '/dashboard-analytics/' : '',
-  output: 'export',
-}
+  publicRuntimeConfig: {
+    basePath: isProd ? '/dashboard-analytics' : '',
+  },
+};
 
-export default nextConfig
+export default nextConfig;
+
