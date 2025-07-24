@@ -12,10 +12,13 @@ import Link from "next/link"
 
 export default function Home() {
   const [isSidebarOpen, setSidebarOpen] = useState(false)
+  const basePath = process.env.NODE_ENV === 'production' ? '/dashboard-analytics' : ''
 
   function toggleSidebar() {
     setSidebarOpen(!isSidebarOpen)
   }
+
+  
 
   return (
     <div className="relative flex min-h-screen w-full overflow-hidden">
@@ -23,7 +26,7 @@ export default function Home() {
       {/* ✅ Sidebar visível sempre no desktop */}
       <aside className="hidden md:block w-60 h-screen bg-muted p-4 border-r">
         <nav className="space-y-4">
-          <Link href="/" className="flex items-center gap-2 hover:underline">
+          <Link href={`${basePath}/`} className="flex items-center gap-2 hover:underline">
             <Users size={18} /> Dashboard
           </Link>
           <Link href="/settings" className="flex items-center gap-2 hover:underline">
